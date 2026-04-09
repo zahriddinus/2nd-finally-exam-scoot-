@@ -1,0 +1,186 @@
+@use "../variables" as *;
+
+.hero {
+  &__container {
+    padding: 20px 167px;
+    height: 650px;
+    background-image: url("../../images/hero-back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+  }
+
+  &__heading {
+    margin: 0 0 40px;
+    max-width: 500px;
+    font-family: $firth-font-family;
+    font-weight: $firth-font-weight;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    letter-spacing: -2.5px;
+    color: $fourth-color;
+  }
+
+  &__bottom {
+    margin-left: 95px;
+    max-width: 385px;
+    position: relative;
+  }
+
+  &__desc {
+    margin: 0 0 40px;
+    font-family: $second-font-family;
+    font-weight: $second-font-weight;
+    color: $fourth-color;
+    font-size: 0.94rem;
+    line-height: 1.4rem;
+  }
+
+  &__desc::before {
+    content: "";
+    display: inline-block;
+    width: clamp(167px, 15vw, 202.5px);
+    height: 20px;
+    background-image: url("../../images/hero-line-left.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: -262px;
+    top: 40px;
+  }
+
+  &__desc::after {
+    content: "";
+    display: inline-block;
+    width: clamp(267px, 30vw, 447px);
+    height: 138px;
+    background-image: url("../../images/hero-line-right.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 415px;
+    top: 40px;
+  }
+
+  &__bottom-line {
+    display: none;
+  }
+}
+
+@media (max-width: 1210px) {
+  .hero {
+    &__desc::after {
+      height: 85px;
+    }
+
+    &__desc::before {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1110px) {
+  .hero {
+    &__bottom {
+      margin-left: 0;
+    }
+
+    &__desc::before {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1010px) {
+  .hero {
+    &__container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__heading {
+      text-align: center;
+    }
+
+    &__bottom {
+      position: static;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    &__desc::after {
+      display: none;
+    }
+
+    &__bottom-line {
+      display: inline-block;
+      background-image: url("../../images/hero-line-tablet.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 138px;
+      width: 300px;
+      position: absolute;
+      bottom: 39px;
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: 905px) {
+  .hero {
+    &__container {
+      padding: 21px 39px 60px;
+      background-image: url("../../images/hero-back-tablet.jpg");
+      background-size: cover;
+    }
+
+    &__heading {
+      margin-bottom: 24px;
+    }
+
+    &__desc {
+      margin-bottom: 32px;
+    }
+
+    &__btn {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 505px) {
+  .hero {
+    &__container {
+      padding: 21px 39px;
+      background-image: url("../../images/hero-back-mobile.jpg");
+      background-size: cover;
+    }
+
+    &__heading {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
+
+    &__btn {
+      margin-bottom: 0;
+    }
+
+    &__bottom-line {
+      background-image: url("../../images/hero-line-mobile.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      bottom: 25px;
+      left: 0;
+    }
+  }
+}

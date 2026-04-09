@@ -1,0 +1,133 @@
+@use "../variables" as *;
+
+.header {
+  &__container {
+    padding: 21px 167px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    margin-right: 5%;
+    text-decoration: none;
+    color: inherit;
+    flex-shrink: 0;
+  }
+
+  &__navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    margin: 8px;
+  }
+
+  &__item-link {
+    padding: 8px;
+    text-decoration: none;
+    font-family: $firth-font-family;
+    font-weight: $firth-font-weight;
+    font-size: 0.94rem;
+    line-height: 1.5rem;
+    color: $third-color;
+    transition: color 0.4s ease;
+  }
+
+  &__item-link:hover {
+    color: $firth-color;
+  }
+
+  &__header--open &__navbar {
+    display: block;
+  }
+
+  &__hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 905px) {
+  .header {
+    &__container {
+      padding: 21px 39px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .header {
+    &__container {
+      position: relative;
+      justify-content: center;
+    }
+
+    &__logo {
+      width: 75.5px;
+      height: 20px;
+    }
+
+    &__hamburger {
+      display: block;
+      width: 20px;
+      height: 16px;
+      background-image: url("../../images/hamburger.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      border: none;
+      background-color: inherit;
+      position: absolute;
+      top: 45%;
+      left: 47px;
+    }
+
+    &__navbar {
+      display: none;
+    }
+
+    &__nav--open &__hamburger {
+      background-image: url("../../images/close.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 18px;
+      height: 18px;
+    }
+
+    &__nav--open &__navbar {
+      padding: 64px 32px 24px;
+      background-color: $footer-color;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      max-width: 70%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 350px;
+    }
+
+    &__nav--open &__list {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__nav--open &__item {
+      margin-right: auto;
+    }
+
+    &__nav--open &__btn {
+      margin-top: auto;
+      max-width: 190px;
+      width: 100%;
+    }
+  }
+}
