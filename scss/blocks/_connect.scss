@@ -1,0 +1,74 @@
+@use "../variables" as *;
+
+.connect {
+  &__container {
+    padding: 102px 167px;
+    background-color: $aside-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url("../../images/connect-back.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: right 0 bottom 0;
+  }
+
+  &__right-link + &__right-link {
+    margin-left: 18px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $firth-font-family;
+    font-weight: $firth-font-weight;
+    color: $fourth-color;
+    font-size: 3rem;
+    line-height: 3rem;
+    letter-spacing: -2.14px;
+    max-width: 410px;
+  }
+}
+
+@media (max-width: 1110px) {
+  .connect {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 905px) {
+  .connect {
+    &__container {
+      padding: 62px 39px;
+    }
+
+    &__right-img-googleplay {
+      width: 130px;
+      height: 40;
+    }
+
+    &__right-img-appstore {
+      width: 114px;
+      height: 40;
+    }
+  }
+}
+
+@media (max-width: 905px) {
+  .connect {
+    &__container {
+      padding: 88px 32px;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+}

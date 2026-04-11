@@ -1,0 +1,155 @@
+@use "../variables" as *;
+
+.facility {
+  &__container {
+    padding: 160px 167px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__item {
+    max-width: 325px;
+  }
+
+  &__item + &__item {
+    margin-left: 12px;
+  }
+
+  &__img {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    margin: 0 0 27px;
+    font-family: $firth-font-family;
+    font-weight: $firth-font-weight;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    letter-spacing: -1.07px;
+    color: $aside-color;
+  }
+
+  &__desc {
+    margin: 0;
+    font-family: $second-font-family;
+    font-weight: $second-font-weight;
+    font-size: 0.94rem;
+    line-height: 1.6rem;
+    color: $third-color;
+  }
+
+  &__line {
+    max-width: 985px;
+    width: 93%;
+    height: 10px;
+    background-color: #e5ecf4;
+    position: absolute;
+    left: -167px;
+    top: 43px;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 1100px) {
+  .facility {
+    &__list {
+      max-width: 673px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__item {
+      margin: 0 0 40px;
+      max-width: 673px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__item + &__item {
+      margin-left: 0;
+    }
+
+    &__item-text-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__img {
+      margin: 0 79px 0 0;
+    }
+
+    &__line {
+      height: 525px;
+      width: 10px;
+      top: -160px;
+      left: 43px;
+    }
+  }
+}
+
+@media (max-width: 905px) {
+  .facility {
+    &__container {
+      padding: 122px 39px;
+    }
+
+    &__list {
+      max-width: 825px;
+    }
+
+    &__item {
+      max-width: 825px;
+    }
+
+    &__line {
+      top: -122px;
+      height: 510px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .facility {
+    &__container {
+      padding: 120px 32px;
+    }
+
+    &__line {
+      top: -120px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .facility {
+    &__item {
+      margin-bottom: 48px;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__img {
+      margin: 0 0 24px;
+      width: 56px;
+      height: 56px;
+    }
+
+    &__title {
+      font-size: 1.25rem;
+      margin-bottom: 24px;
+    }
+
+    &__line {
+      display: none;
+    }
+  }
+}

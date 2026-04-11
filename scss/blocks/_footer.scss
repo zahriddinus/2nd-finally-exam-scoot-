@@ -1,0 +1,99 @@
+@use "../variables" as *;
+
+.footer {
+  &__container {
+    padding: 33px 167px;
+    background-color: $footer-color;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    margin-right: 4%;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    margin: 8px;
+  }
+
+  &__item-link {
+    padding: 8px;
+    text-decoration: none;
+    font-family: $firth-font-family;
+    font-weight: $firth-font-weight;
+    font-size: 0.94rem;
+    line-height: 1.5rem;
+    color: $third-color;
+    transition: color 0.4s ease;
+  }
+
+  &__item-link:hover {
+    color: $firth-color;
+  }
+
+  &__list-social {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  &__item-social + &__item-social {
+    margin-left: 24px;
+  }
+
+  &__item-social-link {
+    text-decoration: none;
+  }
+
+  &__item-social-link:hover svg path {
+    fill: $main-color;
+  }
+}
+
+@media (max-width: 905px) {
+  .footer {
+    &__container {
+      padding: 33px 39px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .footer {
+    &__container {
+      padding: 64px 32px 88px;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__link {
+      margin: 0 0 41px;
+    }
+
+    &__nav {
+      flex-direction: column;
+    }
+
+    &__list {
+      margin-bottom: 85px;
+      flex-direction: column;
+    }
+  }
+}

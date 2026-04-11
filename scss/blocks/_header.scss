@@ -67,6 +67,7 @@
 @media (max-width: 650px) {
   .header {
     &__container {
+      padding: 21px 32px;
       position: relative;
       justify-content: center;
     }
@@ -102,17 +103,18 @@
       height: 18px;
     }
 
-    &__nav--open &__navbar {
+    &__nav--open > &__navbar {
       padding: 64px 32px 24px;
       background-color: $footer-color;
       display: flex;
       flex-direction: column;
       justify-content: start;
-      max-width: 70%;
+      width: 70%;
       position: absolute;
       top: 100%;
       left: 0;
-      height: 350px;
+      height: 650px;
+      z-index: 2;
     }
 
     &__nav--open &__list {
